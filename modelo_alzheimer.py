@@ -74,7 +74,7 @@ if st.button("Predecir"):
 
             # Hacer la predicción
             prediction = model.predict(input_array)
-            st.markdown("prediction")
+            st.markdown(prediction)
             resultado = "Positivo para Alzheimer" if prediction[0] == 1 else "Negativo para Alzheimer"
             st.subheader("Resultado de la Predicción")
             st.write(resultado)
