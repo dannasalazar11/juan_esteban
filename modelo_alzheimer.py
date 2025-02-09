@@ -7,7 +7,7 @@ from sklearn.preprocessing import LabelEncoder
 
 @st.cache_resource
 def load_model():
-    filename = "mejor_modelo_redes_Xpromax.pkl.gz"
+    filename = "mejor_modelo_redes.pkl.gz"
     with gzip.open(filename, 'rb') as f:
         model = pickle.load(f)
     return model
