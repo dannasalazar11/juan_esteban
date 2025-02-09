@@ -73,9 +73,11 @@ if st.button("Predecir"):
             input_array = df_input.to_numpy().reshape(1, -1)
 
             # Hacer la predicción
-            prediction = model.predict(input_array)
-            st.markdown(prediction)
-            resultado = "Positivo para Alzheimer" if prediction[0] == 1 else "Negativo para Alzheimer"
+            prediction = np.argmax(model.predict(input_array))
+            if prediction == 0:
+                resultado = "Negativo para Alzheimer"
+            else:
+                resultado = "Positivo para Alzheimer"
             st.subheader("Resultado de la Predicción")
             st.write(resultado)
         except Exception as e:
